@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manguo</title>
+  <style>
+    :root{
+      --shadow-c: rgba(73, 83, 59, 0.684);
+      --midcolor: #F6F0D7;
+      --forecolor: #C5D89D;
+      --coloracc1: #9CAB84;
+      --coloracc2: #89986D;
+    }
+
+    .drg {
+      position: absolute;
+      z-index: 9;
+      background-color: var(--midcolor);
+      border: 1px solid var(--coloracc2);
+      text-align: center;
+      display: none; 
+      min-width: 250px;
+      border-radius: 1em;
+    }
+
+    .drgh {
+      padding: 10px;
+      cursor: move;
+      background-color: var(--coloracc2);
+      color: var(--midcolor);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--coloracc2);
+      border-top-right-radius: 0.7em;
+      border-top-left-radius: 0.7em;
+      user-select: none;
+      touch-action: none;
+    }
+
+    .close-btn {
+      border: 1px solid var(--forecolor);
+      padding: 2px 8px;
+      cursor: pointer;
+      background: var(--midcolor);
+      color: var(--coloracc1);
+      line-height: 1;
+      border-radius: 1em;
+      font: inherit;
+    }
+
+    .mid {
+      position: fixed;
+      inset: 0px;
+      width: 50%;
+      height: 60%;
+      max-width: 100vw;
+      max-height: 100dvh;
+      margin: auto;
+      border: 1px solid var(--coloracc2);
+      border-radius: 1em;
+      padding: 1em;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--forecolor);
+      box-shadow: 15px 15px 15px var(--shadow-c)
+    }
+
+    #back {
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--midcolor);
+      z-index: 1;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    #notbuttons {
+      width: 100%;
+      height: 90%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #middleground{
+      height:25%;
+      width: 100%;
+      background-color: var(--coloracc1);
+    }
+
+    #notbuttons > h1 {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    #buttons {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .buttons {
+      margin: auto;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .svgbox {
+      width: max-content;
+      border-radius: 1em;
+      align-self: center;
+      place-items: center;
+      vertical-align: middle;
+    }
+
+    .svgbox > h1 {
+      margin: 2px 5px 0px 5px;
+    }
+
+    svg {
+      padding: 0%;
+      margin: 0%;
+    }
+
+    .buttons > p {
+      color: var(--coloracc2);
+      font-size: 16px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="back">
+    <div style="height: 75%;"></div>
+    <div id="middleground"></div>
+  </div>
+
+  <div class="mid">
+    <div id="notbuttons">
+      <h1 style="color: var(--coloracc1); font-size: 70px; margin-bottom: 0px;">Hi! I'm <span style="color: var(--midcolor)">Efe</span>!</h1>
+      <p style="margin-bottom: auto; margin-top: 0px; color: var(--coloracc2);">me@manguo.dev</p>
+    </div>
+
+    <div id="buttons">
+      <button class="buttons open-window" data-target="aboutWin" style="margin-right: 2em;">
+        <div class="svgbox">
+          <h1>
+            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="var(--midcolor)"><path d="M480-480.67q-66 0-109.67-43.66Q326.67-568 326.67-634t43.66-109.67Q414-787.33 480-787.33t109.67 43.66Q633.33-700 633.33-634t-43.66 109.67Q546-480.67 480-480.67ZM160-160v-100q0-36.67 18.5-64.17T226.67-366q65.33-30.33 127.66-45.5 62.34-15.17 125.67-15.17t125.33 15.5q62 15.5 127.28 45.3 30.54 14.42 48.96 41.81Q800-296.67 800-260v100H160Zm66.67-66.67h506.66V-260q0-14.33-8.16-27-8.17-12.67-20.5-19-60.67-29.67-114.34-41.83Q536.67-360 480-360t-111 12.17Q314.67-335.67 254.67-306q-12.34 6.33-20.17 19-7.83 12.67-7.83 27v33.33ZM480-547.33q37 0 61.83-24.84Q566.67-597 566.67-634t-24.84-61.83Q517-720.67 480-720.67t-61.83 24.84Q393.33-671 393.33-634t24.84 61.83Q443-547.33 480-547.33Zm0-86.67Zm0 407.33Z"/></svg>
+          </h1>
+        </div>
+        <p>About me</p>
+      </button>
+
+      <button class="buttons open-window" data-target="linksWin" style="margin-left: 2em; margin-right: 2em;">
+        <div class="svgbox">
+          <h1>
+            <svg style="margin-top: 2px; margin-bottom: -2px;" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="var(--midcolor)"><path d="M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"/></svg>
+          </h1>
+        </div>
+        <p>Linktree</p>
+      </button>
+      <button class="buttons open-window" data-target="portfolioWin" style="margin-left: 2em;">
+        <div class="svgbox">
+            <h1>
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="var(--midcolor)"><path d="M226.67-80q-27 0-46.84-19.83Q160-119.67 160-146.67v-666.66q0-27 19.83-46.84Q199.67-880 226.67-880h506.66q27 0 46.84 19.83Q800-840.33 800-813.33v666.66q0 27-19.83 46.84Q760.33-80 733.33-80H226.67Zm0-66.67h506.66v-666.66h-66.66v270.66l-98-57.33-98 57.33v-270.66h-244v666.66Zm56-91.33h398L550.33-412l-105 137.33L377-362.33 282.67-238Zm-56 91.33v-666.66 666.66Zm244-396 98-57.33 98 57.33-98-57.33-98 57.33Z"/></svg>
+            </h1>
+        </div>
+        <p>Portfolio</p>
+      </button>
+    </div>
+  </div>
+
+  <div class="drg" id="aboutWin">
+    <div class="drgh">
+      <h4 style="margin: 0px;">About Me</h4>
+      <button class="close-btn" type="button" data-close aria-label="Close">×</button>
+    </div>
+    <p style="text-align: left; margin-left: 1em;">Hi!</p>
+  </div>
+
+  <div class="drg" id="linksWin">
+    <div class="drgh">
+      <h4 style="margin: 0px;">Linktree</h4>
+      <button class="close-btn" type="button" data-close aria-label="Close">×</button>
+    </div>
+    <div style="text-align:left; padding: 0 1em 1em;">
+    </div>
+  </div>
+
+  <div class="drg" id="portfolioWin">
+    <div class="drgh">
+        <h4 style="margin: 0px;">My portfolio</h4>
+        <button class="close-btn" type="button" data-close aria-label="Close">×</button>
+    </div>
+    <div style="text-align:left; padding: 0 1em 1em;">
+    </div>
+  </div>
+
+  <script>
+
+    let topZ = 9;
+
+    function bringToFront(win) {
+      topZ += 1;
+      win.style.zIndex = String(topZ);
+    }
+
+    function centerOnce(win) {
+      if (win.dataset.positioned === '1') return;
+
+      const rect = win.getBoundingClientRect();
+      const centerX = (window.innerWidth / 2) - (rect.width / 2);
+      const centerY = (window.innerHeight / 2) - (rect.height / 2);
+
+      win.style.left = Math.max(8, centerX) + 'px';
+      win.style.top  = Math.max(8, centerY) + 'px';
+      win.dataset.positioned = '1';
+    }
+
+    function openWindowById(id) {
+      const win = document.getElementById(id);
+      if (!win) return;
+
+      win.style.display = 'block';
+      bringToFront(win);
+      centerOnce(win);
+    }
+
+    document.addEventListener('click', (e) => {
+      const openBtn = e.target.closest('.open-window');
+      if (openBtn) {
+        openWindowById(openBtn.dataset.target);
+        return;
+      }
+
+      const closeBtn = e.target.closest('[data-close]');
+      if (closeBtn) {
+        const win = closeBtn.closest('.drg');
+        if (win) win.style.display = 'none';
+      }
+    });
+
+    document.querySelectorAll('.drg').forEach(makeDraggable);
+
+    function makeDraggable(win) {
+      const handle = win.querySelector('.drgh') || win;
+
+      let startX = 0, startY = 0;
+      let startLeft = 0, startTop = 0;
+      let dragging = false;
+      let activePointerId = null;
+
+      handle.addEventListener('pointerdown', (e) => {
+        if (e.target.closest('[data-close]')) return;
+
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+
+        dragging = true;
+        activePointerId = e.pointerId;
+        bringToFront(win);
+
+        const rect = win.getBoundingClientRect();
+        startLeft = rect.left;
+        startTop = rect.top;
+        startX = e.clientX;
+        startY = e.clientY;
+
+        handle.setPointerCapture(e.pointerId);
+        e.preventDefault();
+      });
+
+      handle.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        if (activePointerId !== e.pointerId) return;
+
+        if (e.pointerType === 'mouse' && e.buttons !== 1) {
+          dragging = false;
+          activePointerId = null;
+          return;
+        }
+
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+
+        win.style.left = (startLeft + dx) + 'px';
+        win.style.top  = (startTop + dy) + 'px';
+      });
+
+      handle.addEventListener('pointerup', (e) => {
+        if (activePointerId === e.pointerId) {
+          dragging = false;
+          activePointerId = null;
+          try { handle.releasePointerCapture(e.pointerId); } catch (_) {}
+        }
+      });
+
+      handle.addEventListener('pointercancel', (e) => {
+        if (activePointerId === e.pointerId) {
+          dragging = false;
+          activePointerId = null;
+          try { handle.releasePointerCapture(e.pointerId); } catch (_) {}
+        }
+      });
+      win.addEventListener('pointerdown', () => bringToFront(win));
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const openWins = Array.from(document.querySelectorAll('.drg'))
+        .filter(w => w.style.display !== 'none');
+      if (openWins.length === 0) return;
+
+      const topWin = openWins.reduce((a, b) =>
+        (Number(a.style.zIndex || 0) > Number(b.style.zIndex || 0) ? a : b)
+      );
+      topWin.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
