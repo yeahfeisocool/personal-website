@@ -140,6 +140,18 @@
       font-size: 16px;
       margin-top: 5px;
     }
+
+    div#linksDiv {}
+
+    div#linksDiv > ul {
+      list-style-type: none;
+    }
+
+    div#linksDiv > ul > li > a > button {
+      margin: 4px;
+      border-radius: 1em;
+      height: 3em;
+    }
   </style>
 </head>
 <body>
@@ -189,7 +201,7 @@
       <h4 style="margin: 0px;">About Me</h4>
       <button class="close-btn" type="button" data-close aria-label="Close">×</button>
     </div>
-    <p style="text-align: left; margin-left: 1em;">Hi!</p>
+    <p style="text-align: left; margin-left: 1em;"></p>
   </div>
 
   <div class="drg" id="linksWin">
@@ -197,7 +209,12 @@
       <h4 style="margin: 0px;">Linktree</h4>
       <button class="close-btn" type="button" data-close aria-label="Close">×</button>
     </div>
-    <div style="text-align:left; padding: 0 1em 1em;">
+    <div id="linksDiv" style="text-align:left; padding: 0 1em 1em;">
+      <ul>
+        <li><a href="https://music.yandex.com/playlists/lk.906390bf-cf48-401f-99c2-a1b2b63fadaa"><button>My Yandex.Music</button></a></li>
+        <li><a href="https://www.instagram.com/yeahfeisocool/"><button>My Instagram</button></a></li>
+        <li><a href="https://mitatefe.bearblog.dev"><button>My Blog</button></a></li>
+      </ul>
     </div>
   </div>
 
